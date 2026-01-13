@@ -5,13 +5,17 @@ public class Cube {
         return side;
     }
     public void setSide(int side){
+        checkPositive(side);
         this.side=side;
     }
-    
-    public Cube(int side){
+    public void checkPositive(int side){
         if(side<=0){
             throw new IllegalArgumentException("Side length must be positive.");
         }
+    }
+    
+    public Cube(int side){
+        checkPositive(side);
         this.side=side;
     }
     
